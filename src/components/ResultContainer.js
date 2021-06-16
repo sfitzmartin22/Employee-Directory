@@ -5,7 +5,9 @@ import Navbar from './Navbar';
 
 class ResultContainer extends Component {
 	state = {
-		results: []
+		results: [],
+        search: "",
+        sort: ""
 	};
 
 	componentDidMount() {
@@ -16,12 +18,16 @@ class ResultContainer extends Component {
 		console.log(this.state);
 	}
 
-	handleinputChange = (event) => {};
+	handleinputChange = (event) => {
+        if(event.target.name === "search") {
+        const searchValue = event.target.value.toLowerCase();
+        this.setState({search: searchValue})
+    }}
 
 	handleFormSubmit = (event) => {
 		event.preventDefault();
 		this.employeeResults(this.state.results);
-	};
+	}
 
 	render() {
 		return (
@@ -29,7 +35,7 @@ class ResultContainer extends Component {
 				<Navbar />
 				<ul>{this.state.results}</ul>
 			</div>
-		);
+		)
 	}
 }
 
