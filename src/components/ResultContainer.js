@@ -1,43 +1,36 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 // import ResultList from "./ResultList";
-import API from "../utils/API";
-import Navbar from "./Navbar"
+import API from '../utils/API';
+import Navbar from './Navbar';
 
 class ResultContainer extends Component {
-    state = {
-        results: [],
-      };
-    
-    employeeResults = () => {
-        API.populateEmployees().then(res => this.setState(res.data))
-        .catch(err => console.error(err))
-    }
+	state = {
+		results: []
+	};
 
-    componentDidMount() {
-    this.employeeResults();
-    }
+	componentDidMount() {
+		API.populateEmployees().then((res) => {
+			console.log(res.data.results);
+			this.setState({ results: res.data.results, filter: res.data.results });
+		});
+		console.log(this.state);
+	}
 
-    handleinputChange = event => {
-        
+	handleinputChange = (event) => {};
 
+	handleFormSubmit = (event) => {
+		event.preventDefault();
+		this.employeeResults(this.state.results);
+	};
 
-    };
-
-    handleFormSubmit = event => {
-    event.preventDefault();
-    this.employeeResults(this.state.results);
-    };
-
-    render () {
-        return <div>
-        <Navbar
-        /> 
-        <ul>
-        {this.state.results}
-        </ul>          
-        </div>
-    }
-    
+	render() {
+		return (
+			<div>
+				<Navbar />
+				<ul>{this.state.results}</ul>
+			</div>
+		);
+	}
 }
 
 export default ResultContainer;
