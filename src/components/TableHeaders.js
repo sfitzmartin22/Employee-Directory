@@ -2,7 +2,7 @@ import React from 'react';
 
 function TableHeaders(props) {
     return (
-        <thead>
+        <thead className="table-header">
         <tr>
             <th>Image</th>
             <th>Name</th>

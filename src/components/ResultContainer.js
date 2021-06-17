@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 // import ResultList from "./ResultList";
 import API from '../utils/API';
 import Navbar from './Navbar';
+import TableHeaders from './TableHeaders';
+import TableBody from './TableBody';
 
 class ResultContainer extends Component {
 	state = {
@@ -32,9 +34,22 @@ class ResultContainer extends Component {
 
 	render() {
 		return (
-			<div>
-				<Navbar />
-				<table>{this.state.results}</table>
+		    <div className="body">
+				<div className="navbar-brand">
+					<Navbar />
+				</div>
+				<table className="table">
+					<TableHeaders />
+					{this.state.results.map((employee, key) => (
+					<TableBody 
+					image={employee.image}
+					name={employee.name}
+					email={employee.email}
+					dob={employee.dob}
+					key={key}
+					/>
+					))}
+				</table>
 			</div>
 		)
 	}
