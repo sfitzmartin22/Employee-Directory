@@ -13,11 +13,9 @@ class ResultContainer extends Component {
 	};
 
 	componentDidMount() {
-		API.populateEmployees().then((res) => {
+		API.populateEmployees().then(res => {
 			console.log(res.data.results)
 			this.setState({ results: res.data.results, filter: res.data.results });
-			console.log(this.state.results)
-			console.log(this.state.filter)
 		});
 	}
 
@@ -40,6 +38,7 @@ class ResultContainer extends Component {
 				</div>
 				<table className="table">
 					<TableHeaders />
+					<tbody>
 					{this.state.results.map((employee, key) => (
 					<TableBody 
 					image={employee.image}
@@ -49,6 +48,7 @@ class ResultContainer extends Component {
 					key={key}
 					/>
 					))}
+					</tbody>
 				</table>
 			</div>
 		)
