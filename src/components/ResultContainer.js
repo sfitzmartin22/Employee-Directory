@@ -12,10 +12,11 @@ class ResultContainer extends Component {
 
 	componentDidMount() {
 		API.populateEmployees().then((res) => {
-			console.log(res.data.results);
+			console.log(res.data.results)
 			this.setState({ results: res.data.results, filter: res.data.results });
+			console.log(this.state.results)
+			console.log(this.state.filter)
 		});
-		console.log(this.state);
 	}
 
 	handleinputChange = (event) => {
@@ -33,7 +34,7 @@ class ResultContainer extends Component {
 		return (
 			<div>
 				<Navbar />
-				<ul>{this.state.results}</ul>
+				<table>{this.state.results}</table>
 			</div>
 		)
 	}
