@@ -1,11 +1,13 @@
 import React from "react";
+import "./navbar.css"
 
 function Navbar () {
     return (
     <div className="container">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <h1 className="navbar-brand">Employee Directory</h1>
-        <p className="navbar-brand">Click on carrots to filter or use the search box to narrow down your search.</p>
+      <nav className="navbar navbar-expand-lg">
+        <div className="navbar-title">Employee Directory</div>
+        <br></br>
+        <p className="navbar-body">Use the Search box to sort by First/Last Name, Phone or Email.</p>
       </nav>
     </div>
   );
