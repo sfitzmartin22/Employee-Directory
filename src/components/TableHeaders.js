@@ -8,10 +8,12 @@ function TableHeaders(props) {
             <th>Name</th>
             <th>Phone</th>
             <th>Email</th>
-            <th>Date of Birth</th>
+            <th>Age
+                <button onClick={props.sortAscending}></button>
+                <button onClick={props.sortDescending}></button></th>
         </tr>   
         </thead>
-    )
+    ) 
 }
 
 export default TableHeaders;
