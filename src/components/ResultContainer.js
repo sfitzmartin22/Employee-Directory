@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import TableHeaders from './TableHeaders';
 import TableBody from './TableBody';
 import Search from './Search';
+import './resultContainer.css';
 
 class ResultContainer extends Component {
 	state = {
@@ -54,7 +55,7 @@ class ResultContainer extends Component {
 	render() {
 		return (
 		    <div className="body">
-				<div className="navbar-brand">
+				<div>
 					<Navbar />
 				</div>
 					<Search renderSorting={this.renderSort} />
