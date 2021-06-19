@@ -5,6 +5,8 @@
 
   ## Description
   This application is a directory where you can search employees by name, phone number, or email.  I use state management in react to automatically filter the table based on what the user types into the search box.
+
+  Link to project(https://sfitzmartin22.github.io/Employee-Directory/)
  
   ## Table of Contents
   - [Description](#description)
